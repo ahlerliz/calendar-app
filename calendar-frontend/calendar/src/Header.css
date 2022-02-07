@@ -1,0 +1,24 @@
+.Header-title {
+    text-align: left;
+    margin-bottom: 1em;
+    margin-top: .5em;
+    display: flex;
+    align-items: center;
+}
+
+.month {
+    font-size: 2em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+.weekdayBanner {
+    width: -webkit-fill-available;
+}
+
+.weekday {
+    width: 9em;
+}
+
+.addEvent {
+    display: inline-block;
+}

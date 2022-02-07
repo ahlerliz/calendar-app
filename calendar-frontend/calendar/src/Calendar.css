@@ -1,0 +1,5 @@
+.Calendar {
+    width: -webkit-fill-available;
+    height: 40em;
+    border-collapse: collapse;
+}

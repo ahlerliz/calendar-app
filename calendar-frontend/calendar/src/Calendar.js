@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from "react";
 import DayCell from "./DayCell";
-
+import "./Calendar.css"
 
 function Calendar({monthLength = 28}){
     console.log("Calendar")
@@ -11,14 +11,15 @@ function Calendar({monthLength = 28}){
         cells.push({date: i});
     }
 
-    while (cells.length % 7 !== 0){
+    while (cells.length < 35){
         cells.push(null)
     }
 
+    console.log("cells lenght", cells.length)
     let grid = [];
-    for (let y = 0; y <= 5; y++) {
+    for (let y = 0; y < 5; y++) {
         let row = [];
-        for (let x = 0; x <= 7; x++) {
+        for (let x = 0; x < 7; x++) {
         row.push(
             <DayCell
                 key={(y * 7) + x + 1}
@@ -29,7 +30,7 @@ function Calendar({monthLength = 28}){
         grid.push(<tr key={"row" + y}>{row}</tr>);
     }
     return (
-        <table>
+        <table className="Calendar">
             <tbody>{grid}</tbody>
         </table>
     );

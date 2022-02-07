@@ -1,0 +1,10 @@
+.DayCell {
+    border: rgb(214, 212, 212) solid 1px;
+    margin: 0;
+    vertical-align: baseline;
+}
+.date {
+    display: flex;  
+    margin-left: .25em;
+    margin-top: .25em;
+}

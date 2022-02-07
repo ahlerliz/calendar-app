@@ -25,14 +25,16 @@ function Header(){
                 <span className="month">
                     February 2022
                 </span>
-                <button className="addEvent" onClick={() => setShowForm(true)} className="addEventBtn"> 
-                    Add Event 
-                </button>
+                <div className="addEvent">
+                    <button  onClick={() => setShowForm(true)} > 
+                        Add Event 
+                    </button>
+                </div>
             </div>
             {showForm && <NewEventForm show={showForm} addEvent={addEvent}/>}
-            <div className="weekdayBanner">
-                {weekdays.map((day) => <span key={day}> {day} </span>)}
-            </div>
+            <table className="weekdayBanner">
+                {weekdays.map((day) => <td className="weekday" key={day}> {day} </td>)}
+            </table>
         </div>
     );
 }
