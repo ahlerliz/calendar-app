@@ -2,12 +2,11 @@ import React from "react";
 
 
 function NewEventForm({show, addEvent}){
-
     console.log("NewEventForm")
 
     function handleSubmit(evt){
         evt.preventDefault();
-        addEvent();
+        addEvent(evt);
     }
     return (
         <div>
