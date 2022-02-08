@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import NewEventForm from "./NewEventForm";
 import {Button} from "react-bootstrap";
 import "./Header.css";
+import CalendarApi from "./api";
 
 function Header(){
     console.log("Header")
     const [showForm, setShowForm] = useState(false);
 
     function addEvent(formData){
+        console.log(formData)
         setShowForm(false);
+        CalendarApi.addEvent(formData);
     }
 
     function closeEvent(){
