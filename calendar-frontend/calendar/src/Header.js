@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NewEventForm from "./NewEventForm";
-import "./Header.css"
+import {Button} from "react-bootstrap";
+import "./Header.css";
 
 function Header(){
     console.log("Header")
@@ -26,9 +27,9 @@ function Header(){
                     February 2022
                 </span>
                 <div className="addEvent">
-                    <button  onClick={() => setShowForm(true)} > 
+                    <Button variant="outline-primary" size="sm" onClick={() => setShowForm(true)} > 
                         Add Event 
-                    </button>
+                    </Button>
                 </div>
             </div>
             {showForm && <NewEventForm show={showForm} addEvent={addEvent}/>}
