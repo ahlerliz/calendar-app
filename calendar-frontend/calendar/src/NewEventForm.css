@@ -18,4 +18,11 @@
 
 .label {
     display: flex;
+    margin-bottom: .25em;
+    font-weight: 600;
+}
+
+.close {
+    size: sm;
+    margin: .2em;
 }

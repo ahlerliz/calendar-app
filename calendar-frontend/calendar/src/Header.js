@@ -7,7 +7,11 @@ function Header(){
     console.log("Header")
     const [showForm, setShowForm] = useState(false);
 
-    function addEvent(evt){
+    function addEvent(formData){
+        setShowForm(false);
+    }
+
+    function closeEvent(){
         setShowForm(false);
     }
 
@@ -32,9 +36,13 @@ function Header(){
                     </Button>
                 </div>
             </div>
-            {showForm && <NewEventForm show={showForm} addEvent={addEvent}/>}
+            {showForm && <NewEventForm show={showForm} addEvent={addEvent} closeEvent={closeEvent}/>}
             <table className="weekdayBanner">
-                {weekdays.map((day) => <td className="weekday" key={day}> {day} </td>)}
+                <tbody>
+                    <tr>
+                        {weekdays.map((day) => <td className="weekday" key={day}> {day} </td>)}
+                    </tr>
+                </tbody>
             </table>
         </div>
     );

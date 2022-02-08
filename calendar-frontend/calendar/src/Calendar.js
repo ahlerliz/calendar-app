@@ -15,14 +15,13 @@ function Calendar({monthLength = 28}){
         cells.push(null)
     }
 
-    console.log("cells lenght", cells.length)
     let grid = [];
     for (let y = 0; y < 5; y++) {
         let row = [];
         for (let x = 0; x < 7; x++) {
         row.push(
             <DayCell
-                key={(y * 7) + x + 1}
+                key={(y * 7) + x - 1}
                 day = {cells.shift()}
             />,
         );
