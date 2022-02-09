@@ -13,7 +13,7 @@ function NewEventForm({show, addEvent, closeEvent}){
             date: evt.target[0].value, 
             title: evt.target[1].value, 
             description: evt.target[2].value}
-        evt.preventDefault();
+        
         addEvent(formData);
     }
 

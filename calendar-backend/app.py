@@ -43,8 +43,10 @@ def add_event():
 
 @app.route('/', methods=['DELETE'])
 @cross_origin()
-def delete_event(event_id):
-    event = Event.query.get_or_404(event_id)
+def delete_event():
+    breakpoint()
+    id = request.json['id']
+    event = Event.query.get_or_404(id)
     db.session.delete(event)
     db.session.commit()
 

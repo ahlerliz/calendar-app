@@ -2,9 +2,12 @@
     border: rgb(214, 212, 212) solid 1px;
     margin: 0;
     vertical-align: baseline;
+    width: 4em;
+    height: 4em;
+    max-width: 4em;
+    max-height: 4em;
 }
 .date {
-    display: flex;  
-    margin-left: .25em;
-    margin-top: .25em;
+    display: block;  
+    margin: .25em;
 }

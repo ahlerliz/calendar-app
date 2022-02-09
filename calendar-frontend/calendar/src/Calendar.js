@@ -2,9 +2,9 @@ import React, { useState, useEffect }  from "react";
 import DayCell from "./DayCell";
 import "./Calendar.css"
 
-function Calendar({monthLength = 28}){
+function Calendar({monthLength = 28, events}){
     console.log("Calendar")
-    const [showEvent, setShowEvent] = useState(false);
+    
 
     const cells = [null, null];
     for (let i = 1; i <= monthLength; i++){
@@ -23,10 +23,12 @@ function Calendar({monthLength = 28}){
             <DayCell
                 key={(y * 7) + x - 1}
                 day = {cells.shift()}
+                events = {events}
+
             />,
         );
         }
-        grid.push(<tr key={"row" + y}>{row}</tr>);
+        grid.push(<tr key={"row " + y}>{row}</tr>);
     }
     return (
         <table className="Calendar">

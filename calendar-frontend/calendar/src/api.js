@@ -38,7 +38,8 @@ class CalendarApi {
 
   static async getEvents() {
     let res = await this.request();
-    return res.events;
+    console.log(res)
+    return res.data;
   }
 
   static async addEvent(data) {
@@ -46,8 +47,8 @@ class CalendarApi {
   }
 
 
-  static async deleteEvent(event_id) {
-    await this.request("delete", event_id);
+  static async deleteEvent(id) {
+    await this.request("delete", {id});
   }
 }
 

@@ -4,7 +4,7 @@ import {Button} from "react-bootstrap";
 import "./Header.css";
 import CalendarApi from "./api";
 
-function Header(){
+function Header({refreshPage}){
     console.log("Header")
     const [showForm, setShowForm] = useState(false);
 
@@ -12,6 +12,7 @@ function Header(){
         console.log(formData)
         setShowForm(false);
         CalendarApi.addEvent(formData);
+        refreshPage();
     }
 
     function closeEvent(){
