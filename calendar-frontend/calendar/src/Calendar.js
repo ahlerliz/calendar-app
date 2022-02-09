@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from "react";
 import DayCell from "./DayCell";
 import "./Calendar.css"
 
-function Calendar({monthLength = 28, events}){
+function Calendar({monthLength = 28, events, deleteEvent}){
     console.log("Calendar")
     
 
@@ -24,7 +24,7 @@ function Calendar({monthLength = 28, events}){
                 key={(y * 7) + x - 1}
                 day = {cells.shift()}
                 events = {events}
-
+                deleteEvent = {deleteEvent}
             />,
         );
         }

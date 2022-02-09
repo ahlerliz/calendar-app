@@ -16,16 +16,11 @@ class CalendarApi {
   static async request(method = "get", data = {}) {
     console.debug("API Call:", {data}, {method});
 
-    // const headers = (method === "post")
-    //     ? { "Content-Type": "multipart/form-data" }
-    //     : {};
-
     const params = (method === "get")
       ? data
       : {};
 
     try {
-        console.log("trying post")
         return (await axios({ url: BASE_URL, method, data, params }));
 
     } catch (err) {
@@ -38,7 +33,6 @@ class CalendarApi {
 
   static async getEvents() {
     let res = await this.request();
-    console.log(res)
     return res.data;
   }
 

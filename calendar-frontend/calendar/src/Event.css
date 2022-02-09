@@ -1,5 +1,5 @@
 .EventButton {
-    background-color: dodgerblue;
+    
     color: white;
     font-weight: 600;
     border-radius: 8px;
@@ -7,4 +7,42 @@
     margin-right: .25em;
     margin-top: .1em;
     margin-bottom: .1em;
+    display: inline-block;
+}
+
+.EventModal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.EventContent {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2em;
+}
+.event {
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    background-color: dodgerblue;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.delete {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    border-left: white solid 1px;
+    background-color: rgba(30, 143, 255, 0.678);
 }

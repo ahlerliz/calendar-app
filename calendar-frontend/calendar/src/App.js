@@ -21,17 +21,19 @@ function App() {
     }
 
   async function addEvent(formData){
-    console.log(formData)
-    //setShowForm(false);
     await CalendarApi.addEvent(formData);
     setRefresh(!refresh);
   }
 
+  async function deleteEvent(id){
+    await CalendarApi.deleteEvent(id);
+    setRefresh(!refresh);
+}
 
   return (
     <div className="App">
       <Header addEvent={addEvent}/>
-      <Calendar events={events}/>
+      <Calendar events={events} deleteEvent={deleteEvent}/>
     </div>
   );
 }
