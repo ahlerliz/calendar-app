@@ -15,6 +15,10 @@ function App() {
       getEvents();
     }, [refresh]);
 
+  // setInterval(function(){ 
+  //     getEvents();
+  //   }, 5000)
+
   async function getEvents() {
       let allEvents = await CalendarApi.getEvents();
       setEvents(allEvents);

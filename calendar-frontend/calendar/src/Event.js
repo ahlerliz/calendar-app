@@ -24,17 +24,14 @@ function Event({date, deleteEvent}){
         <div>
             { showEvent && <div className="EventModal">
                 <div className="EventContent">
-                    <div>
-                        <span>Date: </span>
+                    <div className="title">{date.title} </div>
+                    <div className="modal-date">
+                        <span>February </span>
                         <span>{date.date} </span>
                     </div>
-                    <div>
-                        <span>Title </span>
-                        <span>{date.title} </span>
-                    </div>
-                    <div>
-                        <span>Description: </span>
-                        <span>{date.description} </span>
+                    <div className="description">
+                        <span className="heading">Description: </span>
+                        <span className="content">{date.description} </span>
                     </div>
                     <Button className="close" variant="outline-dark" onClick={handleClose}>
                         Close

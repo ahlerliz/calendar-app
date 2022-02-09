@@ -35,11 +35,11 @@ function NewEventForm({ addEvent, closeEvent}){
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className="label">Title</Form.Label>
-                    <Form.Control type="title" placeholder="Add Title" />
+                    <Form.Control type="title" placeholder="Add Title" maxLength={20}/>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className="label">Description</Form.Label>
-                    <Form.Control as="textarea" type="Description" placeholder="Add Description" />
+                    <Form.Control as="textarea" type="Description" placeholder="Add Description" maxLength={200}/>
                 </Form.Group>
                 <Button className="save" variant="primary" type="submit">
                     Save
