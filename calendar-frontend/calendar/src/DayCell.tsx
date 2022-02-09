@@ -1,6 +1,7 @@
 import React from "react";
 import Event from "./Event";
 import "./DayCell.css";
+import { EventData } from "./api";
 
 
 /** Individual date cell
@@ -9,8 +10,16 @@ import "./DayCell.css";
  * 
  * Calendar -> DayCell -> Event
 */
+interface DayDate {
+    date:number
+}
+interface DayCellProps {
+    day: DayDate | any;
+    events: EventData[] | null;
+    deleteEvent: any;
+}
 
-function DayCell({day, events, deleteEvent}){
+function DayCell({day, events, deleteEvent}: DayCellProps){
 
 
     return (
@@ -21,9 +30,9 @@ function DayCell({day, events, deleteEvent}){
                 </div>
                 <div>
                     {day && events && (events.filter(
-                        (event) => event.date == day.date))
+                        (event) => Number(event.date) === day.date))
                         .map(date => <Event 
-                            key={date.id + date.date} 
+                            key={date.id && (date.id + date.date)} 
                             date ={date} 
                             deleteEvent={deleteEvent}/>)}
                 </div>

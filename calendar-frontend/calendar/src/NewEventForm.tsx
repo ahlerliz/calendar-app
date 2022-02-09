@@ -9,7 +9,7 @@ import "./NewEventForm.css";
  * Header -> NewEventForm
 */
 
-function NewEventForm({ addEvent, closeEvent}){
+function NewEventForm({ addEvent, closeEvent}: any){
     console.log("NewEventForm");
 
     const dates = Array.from(Array(29).keys());
@@ -18,7 +18,7 @@ function NewEventForm({ addEvent, closeEvent}){
     /** Handles form submission
      * Sends form data to App
      */
-    function handleSubmit(evt){
+    function handleSubmit(evt: any){
         evt.preventDefault();
         let formData = {
             date: evt.target[0].value, 

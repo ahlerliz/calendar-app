@@ -10,7 +10,9 @@ import "./Header.css";
  * App -> Header -> NewEventForm
 */
 
-function Header({addEvent}){
+
+
+function Header({addEvent}:any){
     console.log("Header")
     const [showForm, setShowForm] = useState(false);
 

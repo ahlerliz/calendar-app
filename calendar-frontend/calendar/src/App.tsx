@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from "react";
 import Header from './Header';
 import Calendar from './Calendar';
-import CalendarApi from "./api";
+import CalendarApi, { EventData } from "./api";
 import './App.css';
 
 
@@ -44,13 +44,13 @@ function App() {
 
   /** Adds event: makes API call to post event and changes 
    * "refresh" state */
-  async function addEvent(formData){
+  async function addEvent(formData: EventData){
     await CalendarApi.addEvent(formData);
     setRefresh(!refresh);
   }
   /** Deletes event: makes API call to delete event and changes 
    * "refresh" state */
-  async function deleteEvent(id){
+  async function deleteEvent(id: string){
     await CalendarApi.deleteEvent(id);
     setRefresh(!refresh);
 }

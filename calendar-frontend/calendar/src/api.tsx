@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:5000/";
+const BASE_URL: string = process.env.REACT_APP_BASE_URL || "http://localhost:5000/";
 
 /** API Class.
  *
@@ -10,25 +10,36 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:5000/";
  *
  */
 
+export interface EventData {
+  id?: string ;
+  date: number;
+  title: string;
+  description: string;
+}
+
+interface CallData {
+  url: string;
+  method: any;
+  data: any;
+}
+
 class CalendarApi {
 
-
-  static async request(method = "get", data = {}) {
+  static async request(method: string | void = "get", data = {}) {
     console.debug("API Call:", {data}, {method});
 
-    const params = (method === "get")
-      ? data
-      : {};
 
     try {
-        return (await axios({ url: BASE_URL, method, data, params }));
+        const callData: CallData = { url: BASE_URL, method, data}
+        return (await axios(callData));
 
-    } catch (err) {
+    } catch (err: any) {
       console.error("API Error:", err.response);
       let message = err.response.data.error.message;
       throw Array.isArray(message) ? message : [message];
     }
   }
+
 
   // Individual API routes
 
@@ -41,13 +52,13 @@ class CalendarApi {
 
   /** Add event to db */
 
-  static async addEvent(data) {
+  static async addEvent(data: EventData) {
     await this.request("post", data);
   }
 
   /** Delete event from db */
 
-  static async deleteEvent(id) {
+  static async deleteEvent(id: string) {
     await this.request("delete", {id});
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Button} from "react-bootstrap";
+import { EventData } from "./api";
 import "./Event.css";
 
 
@@ -10,25 +11,30 @@ import "./Event.css";
  *  DayCell -> Event
 */
 
-function Event({date, deleteEvent}){
+interface EventProps {
+    date: EventData;
+    deleteEvent: any;
+}
+
+function Event({date, deleteEvent}: EventProps){
     console.log("Event")
     const [showEvent, setShowEvent] = useState(false)
 
     /** Shows event modal on click */
-    function handleClick(evt){
+    function handleClick(evt: any){
         console.log(evt)
         setShowEvent(true);
     }
 
     /** Closes event modal on click */
-    function handleClose(evt){
+    function handleClose(){
         setShowEvent(false);
     }
 
     /** Deletes event on double click 
      * Sends event id to App
     */
-    function handleDelete(evt){
+    function handleDelete(evt: any){
         console.log(evt)
         deleteEvent(evt.target.id);
     }

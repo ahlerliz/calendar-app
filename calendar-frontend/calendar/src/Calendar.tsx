@@ -1,7 +1,7 @@
-import React, { useState, useEffect }  from "react";
+import React  from "react";
 import DayCell from "./DayCell";
 import "./Calendar.css"
-
+import {EventData} from "./api"
 
 /** Shows calendar grid 
  * 
@@ -9,14 +9,21 @@ import "./Calendar.css"
  * App -> Calendar -> DayCell 
 */
 
+interface CalendarProps {
+    monthLength?: number;
+    events: EventData[] | null;
+    deleteEvent: any;
+}
 
-function Calendar({monthLength = 28, events, deleteEvent}){
+
+function Calendar({monthLength = 28, events, deleteEvent}: CalendarProps){
     console.log("Calendar")
     
 
     const cells = [null, null];
     for (let i = 1; i <= monthLength; i++){
-        cells.push({date: i});
+        let dateDay: any = {date: i}
+        cells.push(dateDay);
     }
 
     while (cells.length < 35){
