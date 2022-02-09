@@ -1,4 +1,4 @@
-.Header-title {
+.header-title {
     text-align: left;
     margin-bottom: 1em;
     margin-top: .5em;
@@ -11,7 +11,7 @@
     margin-right: 0.5em;
     margin-left: 0.5em;
 }
-.weekdayBanner {
+.weekday-banner {
     width: -webkit-fill-available;
 }
 
@@ -19,6 +19,6 @@
     width: 9em;
 }
 
-.addEvent {
+.add-event {
     display: inline-block;
 }

@@ -1,17 +1,17 @@
 import React from "react";
 import Event from "./Event";
 import "./DayCell.css";
-import CalendarApi from "./api";
+
+
+/** Individual date cell
+ * 
+ * - Is rendered by Calendar to show each day in grid
+ * 
+ * Calendar -> DayCell -> Event
+*/
 
 function DayCell({day, events, deleteEvent}){
 
-
-
-
-    // function deleteEvent(id){
-    //     events = events.filter((event) => event.id !== id)
-    //     CalendarApi.deleteEvent(id)
-    // }
 
     return (
         <td className="DayCell">
@@ -22,7 +22,10 @@ function DayCell({day, events, deleteEvent}){
                 <div>
                     {day && events && (events.filter(
                         (event) => event.date == day.date))
-                        .map(date => <Event key={date.id + date.date} date ={date} deleteEvent={deleteEvent}/>)}
+                        .map(date => <Event 
+                            key={date.id + date.date} 
+                            date ={date} 
+                            deleteEvent={deleteEvent}/>)}
                 </div>
             </div>
         </td>

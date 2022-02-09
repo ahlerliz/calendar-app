@@ -30,16 +30,22 @@ class CalendarApi {
     }
   }
 
+  // Individual API routes
+
+  /** Get all events. */
 
   static async getEvents() {
     let res = await this.request();
     return res.data;
   }
 
+  /** Add event to db */
+
   static async addEvent(data) {
     await this.request("post", data);
   }
 
+  /** Delete event from db */
 
   static async deleteEvent(id) {
     await this.request("delete", {id});

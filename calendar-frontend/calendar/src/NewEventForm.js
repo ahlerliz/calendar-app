@@ -2,12 +2,22 @@ import React from "react";
 import {Form,Button} from "react-bootstrap";
 import "./NewEventForm.css";
 
+/** Form for adding new event
+ * 
+ * - Is rendered by Calendar to show each day in grid
+ * 
+ * Header -> NewEventForm
+*/
+
 function NewEventForm({ addEvent, closeEvent}){
     console.log("NewEventForm");
 
     const dates = Array.from(Array(29).keys());
     dates.shift();
 
+    /** Handles form submission
+     * Sends form data to App
+     */
     function handleSubmit(evt){
         evt.preventDefault();
         let formData = {
@@ -19,13 +29,14 @@ function NewEventForm({ addEvent, closeEvent}){
         closeEvent()
     }
 
+    /** Closes form on call */
     function handleClose(){
         closeEvent();
     }
 
     return (
         <div className="NewEventForm" >
-            <Form className="FormContent" onSubmit={handleSubmit}>
+            <Form className="form-content" onSubmit={handleSubmit}>
 
                 <Form.Group className="mb-3">
                     <Form.Label className="label">Date</Form.Label>

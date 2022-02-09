@@ -2,6 +2,14 @@ import React, { useState, useEffect }  from "react";
 import DayCell from "./DayCell";
 import "./Calendar.css"
 
+
+/** Shows calendar grid 
+ * 
+ * 
+ * App -> Calendar -> DayCell 
+*/
+
+
 function Calendar({monthLength = 28, events, deleteEvent}){
     console.log("Calendar")
     
@@ -15,6 +23,7 @@ function Calendar({monthLength = 28, events, deleteEvent}){
         cells.push(null)
     }
 
+    /** Creates individual cells with correct date data */
     let grid = [];
     for (let y = 0; y < 5; y++) {
         let row = [];
