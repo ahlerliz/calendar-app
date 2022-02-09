@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   console.log("App")
   const [events, setEvents] = useState(null);
-  const [refresh, setRefresh] = useState(0);
+  const [refresh, setRefresh] = useState(false);
   
   useEffect(function getEventsOnMount() {
       console.debug("Calendar useEffect getEventsOnMount");
@@ -20,14 +20,17 @@ function App() {
       setEvents(allEvents);
     }
 
-  function refreshPage(){
-    console.log(refresh)
-    setRefresh(refresh + 1);
+  async function addEvent(formData){
+    console.log(formData)
+    //setShowForm(false);
+    await CalendarApi.addEvent(formData);
+    setRefresh(!refresh);
   }
+
 
   return (
     <div className="App">
-      <Header refreshPage={refreshPage}/>
+      <Header addEvent={addEvent}/>
       <Calendar events={events}/>
     </div>
   );

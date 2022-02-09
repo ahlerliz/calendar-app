@@ -7,7 +7,6 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
-print("connected to cors _______________")
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql:///calendar"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -28,7 +27,6 @@ def show_events():
 @app.post('/')
 @cross_origin()
 def add_event():
-    print("_________________________")
     new_event = Event(
         id=uuid4(),
         date=request.json['date'],
@@ -44,7 +42,6 @@ def add_event():
 @app.route('/', methods=['DELETE'])
 @cross_origin()
 def delete_event():
-    breakpoint()
     id = request.json['id']
     event = Event.query.get_or_404(id)
     db.session.delete(event)

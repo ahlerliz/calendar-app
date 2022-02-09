@@ -2,19 +2,21 @@ import React from "react";
 import {Form,Button} from "react-bootstrap";
 import "./NewEventForm.css";
 
-function NewEventForm({show, addEvent, closeEvent}){
+function NewEventForm({ addEvent, closeEvent}){
     console.log("NewEventForm");
 
     const dates = Array.from(Array(29).keys());
     dates.shift();
 
     function handleSubmit(evt){
+        evt.preventDefault();
         let formData = {
             date: evt.target[0].value, 
             title: evt.target[1].value, 
             description: evt.target[2].value}
         
         addEvent(formData);
+        closeEvent()
     }
 
     function handleClose(){

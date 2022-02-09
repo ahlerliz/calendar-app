@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Event from "./Event";
 import "./DayCell.css";
 import CalendarApi from "./api";
 
 function DayCell({day, events}){
 
-    function deleteEvent(key){
-        CalendarApi.deleteEvent(key)
+    useEffect(() => {
+        console.log("Rerender DayCell")
+    }, [events])
+    
+    function deleteEvent(id){
+        events= events.filter((event) => (event.id !== id))
+        CalendarApi.deleteEvent(id)
     }
 
     return (
