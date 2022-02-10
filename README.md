@@ -11,9 +11,10 @@ to run this application install postgresql and create a database named "calendar
 
 `cd calendar-backend`
 
+*You can create a new virtual environment for this project. I use venv with these commands: *
 
 `python3 -m venv venv`
-*You can create a new virtual environment for this project. I use venv with these commands: *
+
 `source venv/bin/activate`
 
 `pip install -r requirements.txt`
