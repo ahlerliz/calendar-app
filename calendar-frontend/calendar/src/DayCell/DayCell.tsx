@@ -1,7 +1,7 @@
 import React from "react";
-import Event from "./Event";
+import Event from "../Event/Event";
 import "./DayCell.css";
-import { EventData } from "./api";
+import { EventData } from "../api";
 
 
 /** Individual date cell
@@ -30,7 +30,7 @@ function DayCell({day, events, deleteEvent}: DayCellProps){
                 </div>
                 <div>
                     {day && events && (events.filter(
-                        (event) => Number(event.date) === day.date))
+                        (event) => event.date === day.date))
                         .map(date => <Event 
                             key={date.id && (date.id + date.date)} 
                             date ={date} 

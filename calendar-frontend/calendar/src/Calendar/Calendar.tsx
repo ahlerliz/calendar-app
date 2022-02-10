@@ -1,7 +1,7 @@
 import React  from "react";
-import DayCell from "./DayCell";
+import DayCell from "../DayCell/DayCell";
 import "./Calendar.css"
-import {EventData} from "./api"
+import {EventData} from "../api"
 
 /** Shows calendar grid 
  * 
@@ -19,7 +19,8 @@ interface CalendarProps {
 function Calendar({monthLength = 28, events, deleteEvent}: CalendarProps){
     console.log("Calendar")
     
-
+    // this is hard coded for the month of February, 2 null days are 
+    // followed by the 28 days of February
     const cells = [null, null];
     for (let i = 1; i <= monthLength; i++){
         let dateDay: any = {date: i}

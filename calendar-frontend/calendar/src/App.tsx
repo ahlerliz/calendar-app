@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from "react";
-import Header from './Header';
-import Calendar from './Calendar';
+import Header from './Header/Header';
+import Calendar from './Calendar/Calendar';
 import CalendarApi, { EventData } from "./api";
 import './App.css';
 
@@ -32,6 +32,7 @@ function App() {
       getEvents();
     }, [refresh]);
 
+  // Leaving commented out as it seems unnecessary to make so many calls
   // setInterval(function(){ 
   //     getEvents();
   //   }, 5000)

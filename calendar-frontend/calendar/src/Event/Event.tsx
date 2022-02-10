@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Button} from "react-bootstrap";
-import { EventData } from "./api";
+import { EventData } from "../api";
 import "./Event.css";
 
 
@@ -75,6 +75,9 @@ function Event({date, deleteEvent}: EventProps){
                     onDoubleClick={handleDelete} 
                     role="button">
                     x
+                    <span className="delete-tooltip">
+                        Double-click to delete!
+                    </span>
                 </span>
             </div>
         </div>

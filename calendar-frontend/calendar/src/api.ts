@@ -25,7 +25,7 @@ interface CallData {
 
 class CalendarApi {
 
-  static async request(method: string | void = "get", data = {}) {
+  static async request(method: string= "get", data = {}) {
     console.debug("API Call:", {data}, {method});
 
 

@@ -46,7 +46,7 @@ function NewEventForm({ addEvent, closeEvent}: any){
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className="label">Title</Form.Label>
-                    <Form.Control type="title" placeholder="Add Title" maxLength={20}/>
+                    <Form.Control type="title" placeholder="Add Title" maxLength={30}/>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className="label">Description</Form.Label>

@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request
 from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, Event
 from uuid import uuid4
@@ -37,7 +37,7 @@ def add_event():
     db.session.add(new_event)
     db.session.commit()
 
-    return redirect('/')
+    return "post successful"
 
 @app.route('/', methods=['DELETE'])
 @cross_origin()
@@ -47,4 +47,4 @@ def delete_event():
     db.session.delete(event)
     db.session.commit()
 
-    return redirect("/")
+    return "delete successful"

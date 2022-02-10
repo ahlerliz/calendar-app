@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NewEventForm from "./NewEventForm";
+import NewEventForm from "../NewEventForm/NewEventForm";
 import {Button} from "react-bootstrap";
 import "./Header.css";
 
